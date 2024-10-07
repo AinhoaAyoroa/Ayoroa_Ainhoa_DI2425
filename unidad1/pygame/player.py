@@ -11,7 +11,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, jet_image_path, scale_factor, screen_width, screen_height):
         super(Player, self).__init__()
         self.surf = pygame.image.load(jet_image_path).convert()
-        self.surf.set_colorkey((255, 255, 255))  # Establece el color clave para el jet
+        self.surf.set_colorkey((255, 255, 255)) 
         self.surf = pygame.transform.scale(self.surf, 
             (int(self.surf.get_width() * scale_factor), 
              int(self.surf.get_height() * scale_factor)))  # Escalar la imagen

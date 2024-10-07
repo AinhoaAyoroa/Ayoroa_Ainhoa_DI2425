@@ -1,13 +1,13 @@
 import os
 
-directori = os.path.dirname(file)
-operacions = os.path.join(directori, "operacions.txt")
-resultats = os.path.join(directori, "resultats.txt")
+directorio = os.path.dirname(file)
+operaciones = os.path.join(directorio, "operaciones.txt")
+resultados = os.path.join(directorio, "resultados.txt")
 
-with open(operacions,'r',encoding = 'utf-8') as f:
-    operacions = f.readlines()
-    with open(resultats,'w',encoding = 'utf-8') as f:
-        for linia in operacions:
+with open(operaciones,'r',encoding = 'utf-8') as f:
+    operaciones = f.readlines()
+    with open(resultados,'w',encoding = 'utf-8') as f:
+        for linia in operaciones:
             num1 = int(linia.split()[0])
             op = linia.split()[1]
             num2 = int(linia.split()[2])
@@ -23,6 +23,6 @@ with open(operacions,'r',encoding = 'utf-8') as f:
                         res = "No se puede dividir entre 0."
                     else:
                         res = num1 / num2
-                case _: # PER DEFECTE
+                case _: 
                     res = "Operador Invalido."
             f.write(f"{num1} {op} {num2} = {res}\n")
