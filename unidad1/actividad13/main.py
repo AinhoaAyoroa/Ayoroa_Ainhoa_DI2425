@@ -16,8 +16,8 @@ with open(operaciones,'r',encoding = 'utf-8') as f:
                     res = num1 + num2
                 case '-':
                     res = num1 - num2
-                case '':
-                    res = num1 num2
+                case '*':
+                    res = num1 * num2
                 case '/':
                     if num2 == 0:
                         res = "No se puede dividir entre 0."

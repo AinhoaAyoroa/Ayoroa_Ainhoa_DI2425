@@ -10,3 +10,6 @@ class Rectangulo(Figura):
 
     def perimetro(self) -> float:
         return 2 * (self.base + self.altura)
+
+    def __str__(self) -> str:
+        return f'base: {self.base} \n area: {self.area():.2f} \n perimetro: {self.perimetro():.2f}'

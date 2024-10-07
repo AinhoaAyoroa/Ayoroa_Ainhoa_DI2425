@@ -1,18 +1,20 @@
 import random
 
 numero_random = random.randint(0, 100)
-numero_user = input("Introduzca un numero: ")
-
-if not (numero_user.isdigit()):
-    print("ErrorNoEsEntero")
-else:
-    numero_user = int(numero_user) 
-
-    if numero_user > 100:
-        print("ErrorEnteroDemasiadoGrande")
-    elif numero_user < 0:
-        print("ErrorEnteroDemasiadoPequeño")
-    elif numero_user == numero_random:
+numero_user = None
+print("--- J U E G O  D E  A D I V I N A R --- \n ")
+while (numero_user != numero_random):
+    
+    
+    
+    try:
+        numero_user = int(input("Introduce un numero: "))
+        assert numero_user == numero_random
         print("Felicidades, has acertado")
-    else:
-        print("No has acertado, el número era ", numero_random)
+    except AssertionError:
+       if numero_user < numero_random:
+           print("ErrorEnterDemasiadoPequeño")
+       if numero_user > numero_random:
+           print("ErrorEnterDemasiadoGrande")
+    except ValueError:
+        print("ErrorNoEsEntero")
