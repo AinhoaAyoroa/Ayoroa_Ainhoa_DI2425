@@ -26,7 +26,6 @@ class Player(pygame.sprite.Sprite):
         self.move_down_sound = move_down_sound
 
     def update(self, pressed_keys):
-        # Aumentar velocidad de movimiento del jugador a 20
         if pressed_keys[K_UP]:
             self.rect.move_ip(0, -20)  
             self.move_up_sound.play()  
@@ -38,7 +37,6 @@ class Player(pygame.sprite.Sprite):
         if pressed_keys[K_RIGHT]:
             self.rect.move_ip(20, 0)
 
-        # Mantener al jugador dentro de los límites de la pantalla con un margen
         MARGIN = 74
         if self.rect.left < MARGIN:
             self.rect.left = MARGIN
