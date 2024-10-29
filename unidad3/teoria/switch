@@ -1,0 +1,20 @@
+import flet as ft
+
+def main(page):
+    def button_clicked(e):
+        text.value = (
+            f"Switch values are:  {case1.value}, {case2.value}, {case3.value}, {case4.value}."
+        )
+        page.update()
+
+    text = ft.Text()
+    case1 = ft.Switch(label="Unchecked switch", value=False)
+    case2 = ft.Switch(label="Checked switch", value=True)
+    case3 = ft.Switch(label="Disabled switch", disabled=True)
+    case4 = ft.Switch(
+        label="Switch with rendered label_position='left'", label_position=ft.LabelPosition.LEFT
+    )
+    button = ft.ElevatedButton(text="Submit", on_click=button_clicked)
+    page.add(case1, case2, case3, case4, button, text)
+
+ft.app(target=main)
