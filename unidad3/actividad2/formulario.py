@@ -2,6 +2,7 @@ import flet as ft
 
 def main(page: ft.Page):
     def button_clicked(e):
+        add_button.update()
         page.update()
 
 # TITULOS FORMULARIO
@@ -48,7 +49,8 @@ def main(page: ft.Page):
 
 
     checkbox = ft.Checkbox(label="Acepto las condiciones de servicio")
+    add_button = ft.ElevatedButton("Añadir", disabled=True, on_click=button_clicked)
 
-    page.add(header, title_personal, rowNombre, rowDirect, rowProvin, title_acceso, rowUser, rowPass, checkbox )
+    page.add(header, title_personal, rowNombre, rowDirect, rowProvin, title_acceso, rowUser, rowPass, checkbox, add_button )
 
 ft.app(target=main)
