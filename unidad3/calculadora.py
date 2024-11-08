@@ -39,6 +39,7 @@ def main(page:ft.Page):
         content=ft.Column(
             controls=[
                 ft.Row(controls=[result], alignment="end"),
+                ft.Divider(),
                 ft.Row(controls=[
                             ExtraActionButton(text="AC"),
                             ExtraActionButton(text="+/-"),
