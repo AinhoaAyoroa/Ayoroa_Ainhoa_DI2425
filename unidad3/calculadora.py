@@ -28,8 +28,12 @@ def main(page:ft.Page):
     page.title = "Calculadora"
     page.update()
 
+    def resized(e):
+        for column in 
+
     result = ft.Text(value=0, color=ft.colors.WHITE, size=20)
 
+    page.on_resized = resized
     page.add( 
     ft.Container(
         width=350,
