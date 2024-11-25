@@ -71,6 +71,11 @@ class Recipiente(ft.Column):
             ]
         )
 
+        self.list_view = ft.Column()
+        self.controls=[
+            self.recipiente_dropdown,
+            self.list_view
+        ]
 
     def add_to_list(self, e):
         precio = self.precio.value
@@ -99,7 +104,6 @@ class Recipiente(ft.Column):
             with open("data/pedido.txt", "w") as file:
                 file.write(eleccion_recipiente + "\n")
 
-
 class Topping(ft.Column):
     def __init__(self):
         super().__init__()
@@ -113,6 +117,12 @@ class Topping(ft.Column):
                 ft.dropdown.Option("Galletas (1 eur)")
             ]
         )
+
+        self.list_view = ft.Column()
+        self.controls =[
+            self.toppings_dropdown,
+            self.list_view
+        ]
 
     def add_to_list(self, e):
         toppings = self.toppings
@@ -137,10 +147,11 @@ class Topping(ft.Column):
             with open("data/pedido.txt", "w") as file:
                 file.write(toppings + "\n")
 
+add_button = add_button = ft.ElevatedButton("Confirmar")
 
 def main(page: ft.Page):
            
     page.title = "Heladeria"
-    page.add(Sabores(), Recipiente(), Topping())
+    page.add(Sabores(), Recipiente(), Topping(), add_button)
     
 ft.app(main)
