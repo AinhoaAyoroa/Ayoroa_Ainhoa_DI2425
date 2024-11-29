@@ -15,7 +15,6 @@ class Sabores(ft.Column):
                 ft.dropdown.Option("Fresa (1 eur)")
             ]
         )
-
         self.cantidad_sabor = ft.TextField(label="Cantidad", keyboard_type="numero")
         self.mensaje = ft.Text("", color=ft.colors.RED, size=12, visible=False)
         self.list_view = ft.Column()
@@ -75,9 +74,8 @@ class Recipiente(ft.Column):
         self.list_view = ft.Column()
         self.controls=[
             self.recipiente_dropdown,
-            self.list_view,
+            self.list_view
         ]
-
 
     def add_to_list(self, e):
         precio = self.precio.value
@@ -106,7 +104,6 @@ class Recipiente(ft.Column):
             with open("data/pedido.txt", "w") as file:
                 file.write(eleccion_recipiente + "\n")
 
-
 class Topping(ft.Column):
     def __init__(self):
         super().__init__()
@@ -122,12 +119,10 @@ class Topping(ft.Column):
         )
 
         self.list_view = ft.Column()
-        self.controls=[
+        self.controls =[
             self.toppings_dropdown,
-            self.toppings,
-            self.list_view,
+            self.list_view
         ]
-
 
     def add_to_list(self, e):
         toppings = self.toppings
@@ -152,8 +147,7 @@ class Topping(ft.Column):
             with open("data/pedido.txt", "w") as file:
                 file.write(toppings + "\n")
 
-
-add_button = ft.ElevatedButton("Confirmar")
+add_button = add_button = ft.ElevatedButton("Confirmar")
 
 def main(page: ft.Page):
            

@@ -1,0 +1,4 @@
+Sabores: Vainilla (1 eur), Chocolate (1 eur), Fresa (1 eur)
+Toppings: Sirope (1 eur), Galletas (1 eur), Nata (1 eur)
+Recipiente: Tarrina (1 eur)
+Total: 22 eur

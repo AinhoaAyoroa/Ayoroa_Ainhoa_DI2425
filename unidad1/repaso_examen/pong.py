@@ -15,9 +15,9 @@ class Player(pygame.sprite.Sprite):
 
     def update(self, pressed_keys, up_key, down_key):
         if pressed_keys[up_key]:
-            self.rect.move_ip(0, -2)
+            self.rect.move_ip(0, -10)
         if pressed_keys[down_key]:
-            self.rect.move_ip(0, 2)
+            self.rect.move_ip(0, 10)
         if self.rect.top <= 0:
             self.rect.top = 0
         if self.rect.bottom >= SCREEN_HEIGHT - 20:
@@ -30,8 +30,8 @@ class Ball(pygame.sprite.Sprite):
         self.surf = pygame.Surface((30, 30))
         self.surf.fill(blanco)
         self.rect = self.surf.get_rect(topleft=start_pos)
-        self.speed_X = 2
-        self.speed_Y = 2
+        self.speed_X = 6
+        self.speed_Y = 6
 
     def update(self):
         self.rect.move_ip(self.speed_X, self.speed_Y)
