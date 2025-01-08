@@ -1,8 +1,6 @@
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QAction, QKeySequence
 
-
-# Nuestra ventana principal hereda de QMainWindow
 class VentanaPrincipal(QMainWindow):
     def __init__(self):
         super().__init__()
