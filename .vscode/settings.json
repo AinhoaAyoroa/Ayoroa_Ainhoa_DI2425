@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "~/AinhoaAyoroa/desarrollo_interfaces/Ayoroa_AinhoaDI2425/segundo_trimestre/unidad4/practicas/login.py",
+    "files.autoSave": "onFocusChange",
+    "python.testing.pytestArgs": [
+        "segundo_trimestre"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
