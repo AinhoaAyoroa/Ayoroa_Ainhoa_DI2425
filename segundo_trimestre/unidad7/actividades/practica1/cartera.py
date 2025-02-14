@@ -3,7 +3,7 @@
 
 class SaldoInsuficiente(Exception):
     """pasará si el saldo es insuficiente"""
-    pass   
+    pass
 
 class Cartera(object):
     """clase cartera"""
@@ -17,7 +17,8 @@ class Cartera(object):
         """funcion para restar el saldo cuando es gastado"""
         if self.saldo < cantidad:
             raise SaldoInsuficiente(
-                'No tienes dinero suficiente. Saldo actual: {}'.format(cantidad))
+                                    f"No tienes dinero suficiente. Saldo actual: {cantidad}")
+
         self.saldo -= cantidad
 
     def ingresar(self, cantidad):

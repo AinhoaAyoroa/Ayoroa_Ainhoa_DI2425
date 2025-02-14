@@ -3,6 +3,7 @@ import sys
 import json
 import requests
 
+# pylint: disable=no-name-in-module
 from PySide6.QtCore import QUrl, QObject, Signal, Slot, Property
 from PySide6.QtWidgets import QApplication
 from PySide6.QtQml import QQmlApplicationEngine
