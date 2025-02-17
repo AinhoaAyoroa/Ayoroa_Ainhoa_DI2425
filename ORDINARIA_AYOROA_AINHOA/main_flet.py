@@ -4,7 +4,7 @@ class ProductApp(ft.UserControl):
     def __init__(self):
         super().__init__()
         self.products = []  
-        self.selected_index = None  # Almacena el índice del producto seleccionado
+        self.selected_index = None  
 
     def build(self):
         self.name_input = ft.TextField(label="Nom del Producte")
