@@ -47,13 +47,13 @@ class ProductApp(ft.UserControl):
 
     def increment_price(self, e):
         current_price = int(self.price_input.controls[1].value)
-        self.price_input.controls[1].value = str(current_price + 1)
+        self.price_input.controls[1].value = float(current_price + 1)
         self.update()
 
     def decrement_price(self, e):
         current_price = int(self.price_input.controls[1].value)
         if current_price > 0:
-            self.price_input.controls[1].value = str(current_price - 1)
+            self.price_input.controls[1].value = float(current_price - 1)
             self.update()
 
     def add_product(self, e):

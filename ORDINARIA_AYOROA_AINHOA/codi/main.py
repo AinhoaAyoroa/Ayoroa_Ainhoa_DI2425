@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QDialog, QDialogButtonBox, QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget, QLabel, QLineEdit, QPushButton, QHeaderView
+from PySide6.QtWidgets import QDialog, QDialogButtonBox, QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget, QLabel, QPushButton, QHeaderView
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtGui import QAction
 
@@ -42,7 +42,7 @@ class ProductApp(QMainWindow):
         main_widget.setLayout(self.layout)
         barra_menus = self.menuBar()
 
-        menu = barra_menus.addMenu("&Menu")
+        menu = barra_menus.addMenu("&Productes")
         accion = QAction("&Afegir producte", self)
         accion.triggered.connect(self.add_product)
         menu.addAction(accion)
@@ -50,7 +50,7 @@ class ProductApp(QMainWindow):
         accion2.triggered.connect(self.edit_product)
         menu.addAction(accion2)
 
-        self.delete_button = QPushButton("Eliminar prudcte")
+        self.delete_button = QPushButton("Eliminar producte")
         self.delete_button.clicked.connect(self.mostrar_dialogo_delete)
         self.layout.addWidget(self.delete_button)
         
