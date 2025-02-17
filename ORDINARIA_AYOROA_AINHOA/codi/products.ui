@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Productes</string>
   </property>
   <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0">
@@ -49,7 +49,14 @@
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="QSpinBox" name="addprice"/>
+    <widget class="QSpinBox" name="addprice">
+     <property name="maximum">
+      <number>100000</number>
+     </property>
+     <property name="stepType">
+      <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+     </property>
+    </widget>
    </item>
    <item row="2" column="1">
     <widget class="QComboBox" name="addcat">

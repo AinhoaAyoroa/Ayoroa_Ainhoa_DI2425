@@ -14,7 +14,7 @@ def test_afegir(qtbot):
     conn.execute('''CREATE TABLE IF NOT EXISTS products (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL UNIQUE,
-        price TEXT NOT NULL,
+        price REAL NOT NULL,
         category TEXT NOT NULL
     )''')
     conn.close()

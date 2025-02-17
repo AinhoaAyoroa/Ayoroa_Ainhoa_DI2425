@@ -55,28 +55,6 @@ class ProductApp(QMainWindow):
         self.layout.addWidget(self.delete_button)
         
 
-        # Formulari (tot amb QLineEdit)
-        # self.name_input = QLineEdit()
-        # self.price_input = QLineEdit()  
-        # self.category_input = QLineEdit()  
-
-        # self.layout.addWidget(QLabel("Nom del Producte:"))
-        # self.layout.addWidget(self.name_input)
-        # self.layout.addWidget(QLabel("Preu (€):"))
-        # self.layout.addWidget(self.price_input)
-        # self.layout.addWidget(QLabel("Categoria:"))
-        # self.layout.addWidget(self.category_input)
-
-        # Botons per afegir i modificar
-        # self.add_button = QPushButton("Afegir Producte")
-        # self.add_button.clicked.connect(self.add_product)
-        # self.layout.addWidget(self.add_button)
-
-        # self.edit_button = QPushButton("Modificar Producte")
-        # self.edit_button.clicked.connect(self.edit_product)
-        # self.layout.addWidget(self.edit_button)
-
-        # Taula de productes
         self.table = self.create_table()
         self.layout.addWidget(self.table)
 
@@ -103,7 +81,7 @@ class ProductApp(QMainWindow):
         for row_index, (product_id, name, price, category) in enumerate(products):
             self.table.insertRow(row_index)
             self.table.setItem(row_index, 0, QTableWidgetItem(name))
-            self.table.setItem(row_index, 1, QTableWidgetItem(price))
+            self.table.setItem(row_index, 1, QTableWidgetItem(f"{float(price):.2f}"))
             self.table.setItem(row_index, 2, QTableWidgetItem(category))
 
     def add_product(self):
@@ -121,7 +99,7 @@ class ProductApp(QMainWindow):
                 price = self.ui.addprice.text()
                 category = self.ui.addcat.currentText()
                 if name and price and category:
-                    self.db.add_product(name, price, category)
+                    self.db.add_product(name, float(price), category)  
                     self.load_products()
                 
 
@@ -132,7 +110,7 @@ class ProductApp(QMainWindow):
         
         product_data = self.db.get_products()[selected_row]
         self.ui.addname.setText(product_data[1])  
-        self.ui.addprice.setValue(int(product_data[2]))  
+        self.ui.addprice.setValue(float(product_data[2]))  
         self.ui.addcat.setCurrentText(product_data[3]) 
 
         res = self.ui.exec()
@@ -147,7 +125,7 @@ class ProductApp(QMainWindow):
                 new_cat = self.ui.addcat.currentText()
 
                 if new_name and new_price and new_cat:
-                    self.db.update_product(user_id, new_name, new_price, new_cat)
+                    self.db.update_product(user_id, new_name, float(new_price), new_cat)  
                     self.load_products()
 
     def delete_product(self, row):

@@ -13,7 +13,7 @@ class Database:
             CREATE TABLE IF NOT EXISTS products (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name TEXT NOT NULL,
-                price TEXT NOT NULL,  -- 🛑 Ha de ser REAL però està com a TEXT per obligar-los a millorar-ho
+                price REAL NOT NULL,  -- 🛑 Ha de ser REAL però està com a TEXT per obligar-los a millorar-ho
                 category TEXT NOT NULL
             )
         """)
